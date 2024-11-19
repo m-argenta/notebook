@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
-          María A. Argenta © {year}
+          María Argenta © {year}
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
