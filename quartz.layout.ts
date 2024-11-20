@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      About: "https://margenta.art",
+      Portfolio: "https://margenta.art",
       Instagram: "https://www.instagram.com/margenta_art",
     },
   }),
@@ -30,9 +30,15 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
   ],
   right: [
-    Component.Graph(),
+    Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+    Component.RecentNotes({
+      title: "Actualizaciones",
+      limit: 3, 
+      showTags: false,
+      linkToMore: "/tags/new",
+    }),
   ],
 }
 

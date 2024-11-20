@@ -2,83 +2,84 @@ import { Translation } from "./definition"
 
 export default {
   propertyDefaults: {
-    title: "Sin título",
-    description: "Sin descripción",
+    title: "Nota",
+    description: "...",
   },
   components: {
     callout: {
       note: "Nota",
       abstract: "Resumen",
-      info: "Información",
-      todo: "Por hacer",
+      info: "Info",
+      todo: "Checklist",
       tip: "Consejo",
-      success: "Éxito",
+      success: "Completado",
       question: "Pregunta",
       warning: "Advertencia",
-      failure: "Fallo",
-      danger: "Peligro",
-      bug: "Error",
+      failure: "Error",
+      danger: "Cuidado",
+      bug: "Bug",
       example: "Ejemplo",
       quote: "Cita",
     },
     backlinks: {
-      title: "Retroenlaces",
-      noBacklinksFound: "No se han encontrado retroenlaces",
+      title: "Notas relacionadas",
+      noBacklinksFound: "Esta página está suelta 🍂",
     },
     themeToggle: {
-      lightMode: "Modo claro",
-      darkMode: "Modo oscuro",
+      lightMode: "No veo nada",
+      darkMode: "Me quedo ciega",
     },
     explorer: {
-      title: "Explorador",
+      title: "Archivos",
     },
     footer: {
       createdWith: "Creado con",
     },
     graph: {
-      title: "Vista Gráfica",
+      title: "Gráfico",
     },
     recentNotes: {
-      title: "Notas Recientes",
-      seeRemainingMore: ({ remaining }) => `Vea ${remaining} más →`,
+      title: "Actualizaciones",
+      seeRemainingMore: ({ remaining }) => `Ver ${remaining} más →`,
     },
     transcludes: {
-      transcludeOf: ({ targetSlug }) => `Transcluido de ${targetSlug}`,
+      transcludeOf: ({ targetSlug }) => `Extraído de ${targetSlug}`,
       linkToOriginal: "Enlace al original",
     },
     search: {
       title: "Buscar",
-      searchBarPlaceholder: "Busca algo",
+      searchBarPlaceholder: "",
     },
     tableOfContents: {
-      title: "Tabla de Contenidos",
+      title: "Esquema de contenidos",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `Se lee en ${minutes} min`,
+      readingTime: ({ minutes }) => `${minutes}m de lectura`,
     },
   },
   pages: {
     rss: {
-      recentNotes: "Notas recientes",
-      lastFewNotes: ({ count }) => `Últimas ${count} notas`,
+      recentNotes: "Actualizaciones",
+      lastFewNotes: ({ count }) => `Últimas ${count} actualizaciones`,
     },
     error: {
-      title: "No se ha encontrado.",
-      notFound: "Esta página es privada o no existe.",
-      home: "Regresa a la página principal",
+      title: "Error",
+      notFound: "Esta página ha desaparecido en extrañas circunstancias.",
+      home: "Aceptar con resignación →",
     },
     folderContent: {
       folder: "Carpeta",
       itemsUnderFolder: ({ count }) =>
-        count === 1 ? "1 artículo en esta carpeta." : `${count} artículos en esta carpeta.`,
+        count === 1 ? "1 nota en en esta carpeta." : `${count} notas en esta carpeta.`,
     },
     tagContent: {
       tag: "Etiqueta",
-      tagIndex: "Índice de Etiquetas",
+      tagIndex: "Todas las etiquetas",
       itemsUnderTag: ({ count }) =>
-        count === 1 ? "1 artículo con esta etiqueta." : `${count} artículos con esta etiqueta.`,
-      showingFirst: ({ count }) => `Mostrando las primeras ${count} etiquetas.`,
-      totalTags: ({ count }) => `Se han encontrado ${count} etiquetas en total.`,
+        count === 1 ? "(1 nota)" : `(${count} notas)`,
+      showingFirst: ({ count }) => `Mostrando las primeras ${count} etiquetas encontradas... 🔍`,
+      totalTags: ({ count }) =>
+      count === 1 ? "Todavía hay solo un tipo de etiqueta diferente. 🐌" : `Se han encontrado ${count} etiquetas diferentes.`,
     },
   },
 } as const satisfies Translation

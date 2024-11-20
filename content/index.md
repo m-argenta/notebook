@@ -1,10 +1,12 @@
 ---
-title: Test
+title: Work in progress
 aliases:
+  - home
 description: 
-date: 
+date: 2024-11-20
 tags: 
-draft:
+draft: false
+explorer: off
 ---
 
 Hello there
